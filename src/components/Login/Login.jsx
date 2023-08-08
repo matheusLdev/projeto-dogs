@@ -13,7 +13,7 @@ const Login = () => {
   const { data, loading } = useSelector((state) => state.user);
 
   if (loading) return <Loading />
-  if (data) return <Navigate to='/conta' />
+  if (data) return <Navigate to='/projeto-dogs/conta' />
   return (
     <section className={styles.login}>
       <div className={styles.forms}>

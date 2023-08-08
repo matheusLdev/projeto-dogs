@@ -26,17 +26,17 @@ const App = () => {
         <main className='AppBody'>
           <Routes>
             <Route path='/projeto-dogs/' element={<Home />} />
-            <Route path='login/*' element={<Login />} />
+            <Route path='/projeto-dogs/login/*' element={<Login />} />
             <Route 
-              path='conta/*' 
+              path='/projeto-dogs/conta/*' 
               element={
                 <ProtectedRoute>
                   <User />
                 </ProtectedRoute>
               } 
             />
-            <Route path='foto/:id' element={<Photo />} />
-            <Route path='perfil/:user' element={<UserProfile />} />
+            <Route path='/projeto-dogs/foto/:id' element={<Photo />} />
+            <Route path='/projeto-dogs/perfil/:user' element={<UserProfile />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </main>

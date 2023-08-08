@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { ReactComponent as MyPhotos } from '../../Assets/feed.svg';
 import { ReactComponent as Stats } from '../../Assets/stats.svg';
 import { ReactComponent as AddPhotos } from '../../Assets/add.svg';
@@ -11,7 +11,6 @@ import { userLogout } from '../../store/user';
 
 const UserHeaderNav = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const mobile = useMedia('(max-width: 40rem)');
   const [mobileMenu, setMobileMenu] = React.useState(false);
 
@@ -19,11 +18,6 @@ const UserHeaderNav = () => {
   React.useEffect(() => {
     setMobileMenu(false);
   }, [pathname]);
-  
-  function handleLogout() {
-    userLogout();
-    navigate('/login');
-  }
 
   return (
     <>
@@ -35,15 +29,15 @@ const UserHeaderNav = () => {
         </button>
       )}
       <nav className={`${mobile ? styles.navMobile : styles.nav} ${mobileMenu && styles.navMobileActive}`}>
-        <NavLink to='/conta' end>
+        <NavLink to='/projeto-dogs/conta' end>
           <MyPhotos />
           {mobile && 'Minhas Fotos'}
         </NavLink>
-        <NavLink to='/conta/estatisticas'>
+        <NavLink to='/projeto-dogs/conta/estatisticas'>
           <Stats/>
           {mobile && 'Estatísticas'}
         </NavLink>
-        <NavLink to='/conta/postar'>
+        <NavLink to='/projeto-dogs/conta/postar'>
           <AddPhotos/>
           {mobile && 'Adicionar Foto'}
         </NavLink>

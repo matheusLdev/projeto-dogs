@@ -25,21 +25,20 @@ const LoginPasswordReset = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if(password.validade()) {
+    if(password.validate()) {
       const {url, options} = PASSWORD_RESET({
         login,
         key,
         password: password.value,
       });
       const {response} = await request(url, options);
-      if (response.ok) navigate('/login')
+      if (response.ok) navigate('/projeto-dogs/login')
     }
   }
 
   return (
     <section className='animeLeft'>
       <Head title='Resete a senha' />
-      <p>{key}</p>
       <p>{login}</p>
       <form onSubmit={handleSubmit}>
         <Input 
