@@ -29,7 +29,7 @@ const UserHeaderNav = () => {
         </button>
       )}
       <nav className={`${mobile ? styles.navMobile : styles.nav} ${mobileMenu && styles.navMobileActive}`}>
-        <NavLink to='/projeto-dogs/conta' end>
+        <NavLink to='/projeto-dogs/conta/'>
           <MyPhotos />
           {mobile && 'Minhas Fotos'}
         </NavLink>
